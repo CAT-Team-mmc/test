@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>猎鹰安全</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body class="ly-body">
+	<header>
+		<div class="header_body clearfix">
+			<div class="logo"></div>
+			<div class="info fr">
+				<a href="javascript:;">博客</a>
+				<a href="javascript:;">问与答</a>
+				<a href="javascript:;" id="titleCurse">课程</a>
+				<a href="javascript:;" class="bg_green bg_radius_3" id="login">登录</a>
+			</div>
+		</div>
+	</header>
+	<div class="ly-main">
+		<div>
+			<p>
+				<span class="index_span">虚拟化的云实战训练平台</span>
+				<span class="index_span" style="padding-left: 40px;">多种分类训练课程体系</span>
+				<span class="index_span" style="padding-left: 80px;">真实还原每一种安全漏洞攻防环境</span>
+				<span class="index_span" style="padding-left: 120px;">学会从攻击的角度思考安全防护</span>
+				<span class="index_span" style="padding-left: 160px;">让编程不再枯燥乏味</span>
+				<span class="index_span" style="padding-left: 200px;">学以致用立竿见影</span>
+			</p>
+		</div>
+		<div>
+			<p>
+				<span class="index_span">以0基础教学为前提</span>
+				<span class="index_span" style="padding-left: 40px;">以web安全为基础</span>
+				<span class="index_span" style="padding-left: 80px;">以分类训练为进度</span>
+				<span class="index_span" style="padding-left: 120px;">以动手实战为原则</span>
+				<span class="index_span" style="padding-left: 160px;">以讲解原理为内容</span>
+				<span class="index_span" style="padding-left: 200px;">以扩展思维为途径</span>
+			</p>
+		</div>
+		<div>
+			<span style="left:500px; top:957px;">拒绝工具党，拒绝脚本小子</span>
+			<span class="l" style="left:638px; top:1093px;">职业安全团队<br/>在线指导学员疑问</span>
+			<span class="l" style="left:776px; top:1232px;">优秀毕业学员推荐到<br/>国内知名企业入职就业</span>
+			<span style="left:110px; top:843px;">阶梯型的课程安排体系</span>
+			<span class="l" style="left:249px; top:987px;">锻炼扎实的编程功力和<br/>渗透能力</span>
+			<span style="left:386px; top:1122px;">强化渗透思维锻炼</span>
+			<span class="l" style="left:530px; top:1260px;">锻炼从安全工程师到<br/>安全leader的思维模式</span>
+			<span class="l" style="left:669px; top:1407px;">锻炼安全体系建设的<br/>基本能力</span>
+		</div>
+		<div></div>
+	</div>
+	<div class="footer">
+		<div class="footer-body clearfix">
+			<ul>
+				<li class="title">关于猎鹰安全</li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">合作伙伴</a></li>
+			</ul>
+			<ul>
+				<li class="title">咨询服务</li>
+				<li>客服微信：wx_1109</li>
+				<li>客服邮箱：2022137639@qq.com</li>
+			</ul>
+			<ul>
+				<li class="title">付款方式</li>
+				<li>支付宝：LYSECORG@163.com</li>
+				<li>银行卡：6225880159693762（招商）</li>
+			</ul>
+			<div class="qr_code"></div>
+		</div>
+	</div>
+
+	<div class="begin-to-study">
+		<div class="study-img"></div>
+		<div class="study-info">
+			<div>请联系</div>
+			<div style="background-color: #efefef; padding: 5px;">官方指定<span style="color: #da0000">QQ 2022137639</span><br/>开通学习账号</div>
+		</div>
+	</div>
+
+	<!-- 登录弹出框 -->
+	<div class="index_dialog" id="loginDlg" style="display: none;">
+		<div class="dlg_close"></div>
+		<div class="dlg_title">登录</div>
+		<div class="login" style="">
+			<div class="login_div login_input_div">
+				<span class="login_span user_name"></span>
+				<input type="text" id="txtUser" class="login_input" placeholder="请输入账号">
+			</div>
+			<div class="login_div login_input_div">
+				<span class="login_span user_pwd"></span>
+				<input type="text" id="txtPassword" class="login_input" placeholder="请输入密码">
+			</div>
+			<div class="login_div">
+				<div style="display: inline-block; float: left;">
+					<input type="checkbox" style="vertical-align: middle; margin-right: 5px;"><label>记住账户</label>
+				</div>
+				<div style="display: inline-block; float: right;"><span style="color: #0177f2; cursor: pointer;">忘记密码？</span></div>
+			</div>
+			<div class="login_div" style="text-align: center;">
+				<button type="button" class="login_button">登录</button>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		//点击课程
+		$("#titleCurse, #login").bind("click", function(){
+			//如果已经登录，直接跳转到课程页面
+			var hasLogin = false;
+			if (hasLogin) {
+
+			} else {	//如果还未登录，则打开登录的dialog
+				var windowWidth = $(window).width();
+				$("#loginDlg").css("left", (windowWidth - 550)/2 )
+				$("#loginDlg").show();
+			}
+		})
+
+		//点击登录dlg的关闭icon
+		$(".dlg_close").bind("click", function() {
+			$(this).parent(".index_dialog").hide();
+		})
+	})
+
+</script>
+
+</html>

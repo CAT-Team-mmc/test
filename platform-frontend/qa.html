@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>问与答</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<style type="text/css">
+		p.answer {
+			color: #6c6c6c;
+			display: none;
+		}
+
+		.qa-body .question {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div class="header qa-header">
+		<div class="top">
+			<div class="top-body clearfix">
+				<div class="logo fl"></div>
+				<div class="info fr" style="float:left; width: 580px;">
+					<a href="javascript:;">博客</a>
+					<a href="javascript:;">问与答</a>
+					<a href="javascript:;" id="titleCurse">课程</a>
+				</div>
+				<div class="info fr" style="float:right; width: auto;">
+					<span id="uName">weiwenyue</span>
+					<div class="user-info" id="userInfo" style="display:none;">
+						<a href="#">运行中的服务</a>
+						<a href="#">资料</a>
+						<a href="#">退出</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="qa-body">
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+		<div class="item">
+			<h2 class="question">用户学习一年能达到什么水平？</h2>
+			<p class="answer">通过功防教学实验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</p>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-body clearfix">
+			<ul>
+				<li class="title">关于猎鹰安全</li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">合作伙伴</a></li>
+			</ul>
+			<ul>
+				<li class="title">咨询服务</li>
+				<li>客服电话：12344556666</li>
+				<li>客服邮箱：12344556666@163.com</li>
+			</ul>
+			<ul>
+				<li class="title">付款方式</li>
+				<li>支付宝：</li>
+				<li>银行卡：</li>
+			</ul>
+			<div class="qr_code"></div>
+		</div>
+	</div>
+	<script>
+		$(".qa-body .question").bind("click", function(){
+			var obj = $(this).parent("div.item").find("p.answer");
+			if (obj.is(':hidden')) {
+				$(".qa-body div.item").find("p.answer:visible").hide();
+				obj.show();
+			} else {
+				obj.hide();
+			}
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>课程列表</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="header">
+		<div class="top">
+			<div class="top-body clearfix">
+				<div class="logo fl"></div>
+				<div class="info fr" style="float:left; width: 580px;">
+					<a href="javascript:;">博客</a>
+					<a href="javascript:;">问与答</a>
+					<a href="javascript:;" id="titleCurse">课程</a>
+				</div>
+				<div class="info fr" style="float:right; width: auto;">
+					<span id="uName">weiwenyue</span>
+					<div class="user-info" id="userInfo" style="display:none;">
+						<a href="#">运行中的服务</a>
+						<a href="#">资料</a>
+						<a href="#">退出</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="search-bg">
+			<div class="search-box">
+				<span class="s-bg"></span>
+				<form action="" name="" method="">
+					<span class="s-c"><input type="text" name="keyword" id="keyword" placeholder="搜索您需要的"><em class="btn"></em></span>
+				</form>
+				<p>热门搜索：<a href="#">系统安全培训镜像</a>，<a href="#">web安全测试系列课程</a></p>
+			</div>
+		</div>
+	</div>
+	<div class="course-list">
+		<h2><span id="showlist">课程分类</span>
+			<span id="menuTab">
+				<!--动态获取输出内容 STA-->
+				<span class="on" category="webSec" cate-id="6">web安全</span>
+				<span category="mobile sec" cate-id="5">移动安全</span>
+				<span category="php" cate-id="1">php</span>
+				<span category="css3" cate-id="4">css3</span>
+				<!--动态获取输出内容 END-->
+			</span>
+			<ul class="menu-list" id="menuList" style="display:none;">
+				<li><a herf="javascript:;" category="php" cate-id="1">php</a></li>
+				<li><a herf="javascript:;" category="javascript" cate-id="2">javascript</a></li>
+				<li><a herf="javascript:;" category="html" cate-id="3">html</a></li>
+				<li><a herf="javascript:;" category="css3" cate-id="4">css3</a></li>
+			</ul>
+		</h2>
+		<!--Tab切换内容 START-->
+		<div class="content" id="content">
+			<!--动态获取输出内容 STA-->
+			<ul id="content" class="item clearfix" style="display:block;">
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_01.png"/>
+						<div class="course-intro">
+							<h3>一些童年里的游戏</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_02.png"/>
+						<div class="course-intro">
+							<h3>ubuntu镜像示例</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_03.png"/>
+						<div class="course-intro">
+							<h3>web-test1</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_04.png"/>
+						<div class="course-intro">
+							<h3>系统安全训练镜像</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_05.png"/>
+						<div class="course-intro">
+							<h3>测试镜像</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_06.png"/>
+						<div class="course-intro">
+							<h3>webTest-CATTeam</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_07.png"/>
+						<div class="course-intro">
+							<h3>web安全测试系列课程</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_01.png"/>
+						<div class="course-intro">
+							<h3>一些童年里的游戏</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_02.png"/>
+						<div class="course-intro">
+							<h3>ubuntu镜像示例</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_03.png"/>
+						<div class="course-intro">
+							<h3>web-test1</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_04.png"/>
+						<div class="course-intro">
+							<h3>系统安全训练镜像</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_05.png"/>
+						<div class="course-intro">
+							<h3>测试镜像</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_06.png"/>
+						<div class="course-intro">
+							<h3>webTest-CATTeam</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_07.png"/>
+						<div class="course-intro">
+							<h3>web安全测试系列课程</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_06.png"/>
+						<div class="course-intro">
+							<h3>webTest-CATTeam</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+				<li class="box-shadow">
+					<a href="#" target="_blank">
+						<img src="imgs/course_07.png"/>
+						<div class="course-intro">
+							<h3>web安全测试系列课程</h3>
+							<p>年少的游戏梦，瑰丽而又美好。培养情操，放松心情，家庭常备，出门远行，随时消遣。</p>
+						</div>
+					</a>
+				</li>
+			</ul>
+			<!--动态获取输出内容 END-->
+		</div>
+		<!--Tab切换内容 END-->
+		<div id="cursePage" class="page">
+			<a href="" class="pre bg-pre"><</a>
+			<a class="curr">1</a>
+			<a href="">2</a>
+			<a href="">3</a>
+			<a href="">4</a>
+			<a href="">5</a>
+			<a href="">6</a>
+			<a href="">7</a>
+			<a href="" class="next bg-green">></a>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-body clearfix">
+			<ul>
+				<li class="title">关于猎鹰安全</li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">合作伙伴</a></li>
+			</ul>
+			<ul>
+				<li class="title">咨询服务</li>
+				<li>客服电话：12344556666</li>
+				<li>客服邮箱：12344556666@163.com</li>
+			</ul>
+			<ul>
+				<li class="title">付款方式</li>
+				<li>支付宝：</li>
+				<li>银行卡：</li>
+			</ul>
+			<div class="qr_code"></div>
+		</div>
+	</div>
+	<script>
+	
+	var userBox = document.getElementById('uName');
+	var userInfo = document.getElementById('userInfo');
+	userInfo.onmouseover = function(){
+		userInfo.style.display= 'block';
+	};
+	userBox.onmouseover = function(){
+		userInfo.style.display= 'block';
+	};
+	userInfo.onmouseout = function(){
+		userInfo.style.display= 'none';
+	};
+	userBox.onmouseout = function(){
+		userInfo.style.display= 'none';
+	};
+	
+	var curr_page = 1;	//当前分页
+	var total_page = 1;	//分页总数
+	var curr_category = "";		//当前课程分类
+
+	$(function(){
+		//menuList中下拉菜单的显示和隐藏
+		$("#showlist").bind("click", function(){
+			if($("#menuList").is(":visible")) {
+				$("#menuList").hide();
+			} else {
+				$("#menuList").show();
+			}
+		})
+
+		//点击左侧Menu，如果右侧导航没有该菜单，则替换右侧导航的第一；否则显示右侧相应菜单
+		$("#menuList").find("a").bind("click", function(){
+			var category = $(this).attr("category");
+			var cateId = $(this).attr("cate-id");
+			if ($("#menuTab span[category=" + category + "]").length > 0) {
+				$("#menuTab span[category=" + category + "]").click();
+			} else {
+				$("#menuTab span[category]:first").text($(this).text());
+				$("#menuTab span[category]:first").attr("category", category);
+				$("#menuTab span[category]:first").attr("cate-id", cateId);
+				$("#menuTab span[category]:first").click();
+			}
+			$("#menuList a").css("color", "#ffffff");
+			$(this).css("color", "red");
+			$("#menuList").hide();
+		})
+
+		//点击横向导航时，向后台查询数据，并重新渲染课程列表
+		$("#menuTab span[category]").bind("click", function(){
+			$("#menuTab .on").removeClass("on");
+			$(this).addClass("on");
+			var category = $(this).attr("category");
+			curr_category = category;
+			curr_page = 1;
+			searchContents(true);
+		})
+
+		$("#menuTab span[category]:first").click();
+	})
+
+	//查询课程数据 initPage:是否需要初始化分页
+	function searchContents(initPage) {
+		$.ajax({ 
+			type: "get",
+			url: "http://www.sxauweb.club/index/coursesJSON", 
+			data: {
+				cur_page: curr_page,
+				category: curr_category,
+				search: $("#keyword").val()
+			}, 
+			success: function(data){
+				data = $.parseJSON(data);
+	        	var contents = data.page.items;
+	        	var totalPages = data.page.total_items;
+	        	total_page = totalPages;
+	        	if (initPage) {
+	        		if (totalPages <= 1) {
+	        			$("#cursePage").hide();
+	        		} else {
+	        			$("#cursePage").empty();
+	        			var pageHtml = "";
+	        			pageHtml += '<a href="" class="pre bg-pre"><</a>';
+	        			for (var i = 1; i <= totalPages; i++) {
+	        				if (i == 1) {
+	        					pageHtml += '<a class="curr">1</a>';
+	        				} else {
+	        					pageHtml += '<a pageNum=' + i + ' href="">' + i + '</a>';
+	        				}
+	        				
+	        			}
+	        			pageHtml += '<a href="" class="next bg-green">></a>';
+	        			$("#cursePage").html(pageHtml);
+	        			$("#cursePage").show();
+
+	        			$("#cursePage a").bind("click", function(){
+	        				//上一页
+	        				if ($(this).attr("clsss").indexOf("pre") > -1) {
+	        					if (curr_page == 1) return false;
+	        					curr_page -= 1;
+	        				} else if ($(this).attr("clsss").indexOf("next") > -1) {	//下一页
+	        					if (curr_page == total_page) return false;
+	        					curr_page += 1;
+	        				} else {
+	        					var pageNum = $(this).text();
+		        				curr_page = pageNum;
+	        				}
+	        				$("#currsePage").find(".curr").removeClass("curr");
+        					$("#cursePage a[pageNum=" + curr_page + "]").addClass("curr");
+	        				searchContents(false);
+	        			});
+	        		}
+	        	}
+	    	},
+	    	error: function(e) {
+	    		console.log(e)
+	    	}
+	    });
+	}
+	
+	// 渲染课程列表
+	function initCategoryContent(contents) {
+		$("#content").empty();
+		var html = "";
+		for (var i = 0; i < contents.length; i++) {
+			html += '<li class="box-shadow">' 
+				  + '	<a href="/user/course/' + n.id + '" target="_blank">' 
+				  + '		<img src="' + n.url + '"/>' 
+				  + '		<div class="course-intro">' 
+				  + '			<h3>' + n.name + '</h3>' 
+				  + '			<p>' + n.description + '</p>' 
+				  + '		</div>' 
+				  + '	</a>' 
+				  + '</li>';
+		}
+		$("#content").html(html);
+	}
+	</script>
+</body>
+</html>

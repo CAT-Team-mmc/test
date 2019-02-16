@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详情</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+	<div class="header detail-header">
+		<div class="top">
+			<div class="top-body clearfix">
+				<div class="logo fl"></div>
+				<div class="info fr" style="float:left; width: 580px;">
+					<a href="javascript:;">博客</a>
+					<a href="javascript:;">问与答</a>
+					<a href="javascript:;" id="titleCurse">课程</a>
+				</div>
+				<div class="info fr" style="float:right; width: auto;">
+					<span id="uName">weiwenyue</span>
+					<div class="user-info" id="userInfo" style="display:none;">
+						<a href="#">运行中的服务</a>
+						<a href="#">资料</a>
+						<a href="#">退出</a>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	<div class="detial-body">
+		<div class="part1 box-shadow-detial clearfix">
+			<img src="imgs/img_detail.png"/>
+			<ul>
+				<li>SQL注入基础训练一</li>
+				<li>通过攻防教育试验系统中的web系统做简单的sql注入学习，从而理解sql注入的基本原理。</li>
+				<li>
+					<a href="#" id="deployBtn" onclick="beginDeploy(29)">开始部署</a>
+					<span id="warn_info" style="color: #cc0101; font-size: 15px; margin-left: 15px; display: none;">没有部署权限！</span>
+					<div class="detail-progressBar" style="display: none;"><div id="detail-bar"></div></div>
+				</li>
+			</ul>
+		</div>
+		<div class="tab-menu clearfix" id="menuTab">
+			<span class="on"><em></em>课程报告</span>
+			<span><em></em>课程分析</span>
+			<span><em></em>课后拓展</span>
+		</div>
+		<div class="content" id="content">
+			<div style="display:block;">1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="footer-body clearfix">
+			<ul>
+				<li class="title">关于猎鹰安全</li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">合作伙伴</a></li>
+			</ul>
+			<ul>
+				<li class="title">咨询服务</li>
+				<li>客服电话：12344556666</li>
+				<li>客服邮箱：12344556666@163.com</li>
+			</ul>
+			<ul>
+				<li class="title">付款方式</li>
+				<li>支付宝：</li>
+				<li>银行卡：</li>
+			</ul>
+			<div class="qr_code"></div>
+		</div>
+	</div>
+
+	<script>
+	var oMenu = document.getElementById('menuTab');
+	var aSpan = oMenu.getElementsByTagName('span');
+	var oContent = document.getElementById('content');
+	var aUl = oContent.getElementsByTagName('div');
+	for(var i=0; i<aSpan.length; i++){
+		aSpan[i].setAttribute('index',i);
+		aSpan[i].onclick=function(){
+			var _index = this.getAttribute('index');
+			for(var j=0; j<aSpan.length; j++){
+				aSpan[j].className = '';
+				aUl[j].style.display = 'none';
+			}
+			this.className = 'on';
+			aUl[_index].style.display = 'block';
+		};
+	}
+	var userBox = document.getElementById('uName');
+	var userInfo = document.getElementById('userInfo');
+	userInfo.onmouseover = function(){
+		userInfo.style.display= 'block';
+	};
+	userBox.onmouseover = function(){
+		userInfo.style.display= 'block';
+	};
+	userInfo.onmouseout = function(){
+		userInfo.style.display= 'none';
+	};
+	userBox.onmouseout = function(){
+		userInfo.style.display= 'none';
+	};
+
+	//点击开始部署，展示进度条
+	function beginDeploy(id) {
+		//如果不能部署，则进行提示
+		var hasRight = $("#menuTab .on").length > 0;
+		if (!hasRight) {
+			$("#warn_info").show();
+			return;
+		}
+		var address = "";
+		var status = "";
+        $.get("/user/deploy/" + id, function (data) {
+               address = data.address;
+               status = data.status;
+               var message = data.message;
+               if (status == 10001 || status == 10002) {
+               		$("#warn_info").text(message);
+               		$("#warn_info").show();
+					return;
+               }
+            
+				$("#deployBtn").hide();
+				$(".detail-progressBar").show();
+				//初始化js进度条
+				$("#detail-bar").css("width","0px");
+				//进度条的速度，越小越快
+				var speed = 50;
+
+				bar = setInterval(function(){
+					nowWidth = parseInt($("#detail-bar").width());
+					//宽度要不能大于进度条的总宽度
+					if(nowWidth<=380){
+						barWidth = (nowWidth + 1)+"px";
+					    $("#detail-bar").css("width",barWidth);
+					}else{
+					    //进度条读满后，停止
+					    clearInterval(bar);
+					}
+				},speed);
+				if (address != "" && address != undefined) {
+					var a = $("<a id='newLink' href='" + address + "' target='_blank' style='display: none;'>部署</a>").appendTo($("body"));
+					$("#newLink").click();
+					a.remove();
+				}
+		});
+	}
+	</script>
+</body>
+</html>
